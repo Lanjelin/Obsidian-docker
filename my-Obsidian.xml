@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Obsidian</Name>
+  <Repository>ghcr.io/lanjelin/obsidian-docker:latest</Repository>
+  <Registry>https://github.com/Lanjelin/Obsidian-docker</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Lanjelin/Obsidian-docker/issues</Support>
+  <GitHub>https://github.com/Lanjelin/Obsidian-docker</GitHub>
+  <ReadMe/>
+  <Project>https://obsidian.md</Project>
+  <Overview>
+Obsidian.md directly in your browser.  &#xD;
+Container based on Docker Baseimage KasmVNC by linuxserver&#xD;
+&#xD;
+Supports Docker mods, add linuxserver/mods:universal-git to the DOCKER_MODS variable to add git support.&#xD;
+&#xD;
+Under no circumstances expose this container to anything but your local machine, unless you really know what you're doing.  &#xD;
+Failure to practice proper security could lead to exposure of your vault.
+  </Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Lanjelin/docker-templates/main/lanjelin/obsidian.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Lanjelin/docker-templates/main/lanjelin/images/obsidian.png</Icon>
+  <ExtraParams>--shm-size=1gb</ExtraParams>
+  <PostArgs/>
+  <Requires/>
+  <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="PokeMMO GUI." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="WebUI HTTPS" Target="3001" Default="3001" Mode="tcp" Description="PokeMMO GUI HTTPS." Type="Port" Display="always" Required="true" Mask="false">3001</Config>
+  <Config Name="Enable GPU Acceleration " Target="" Default="" Mode="" Description="DRI3 GPU Acceleration" Type="Device" Display="always" Required="false" Mask="false">/dev/dri:/dev/dri</Config>
+  <Config Name="Specify GPU device" Target="DRINODE" Default="/dev/dri/renderD128" Mode="" Description="If mounting in /dev/dri for DRI3 GPU Acceleration allows you to specify the device to use IE /dev/dri/renderD128" Type="Variable" Display="always" Required="false" Mask="false">/dev/dri/renderD128</Config>
+  <Config Name="Vault Storage" Target="/config/obsidian" Default="/mnt/user/appdata/obsidian" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/obsidian</Config>
+  <Config Name="DOCKER_MODS" Target="DOCKER_MODS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+</Container>
