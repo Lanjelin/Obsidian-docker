@@ -59,7 +59,7 @@ I've inlcuded a template to make it a fast process setting this up in UnRaid.
 Simply run the following to download the template, then navigate to your Docker-tab, click Add Container, and find Obsidian in the Template-dropdown.
 
 ```bash
-wget -O /boot/config/plugins/dockerMan/templates-user/my-Obsidian.xml https://raw.githubusercontent.com/Lanjelin/Obsidian-docker/main/my-Obsidian.xml
+wget -O /boot/config/plugins/dockerMan/templates-user/my-Obsidian.xml https://raw.githubusercontent.com/Lanjelin/docker-templates/main/lanjelin/obsidian.xml
 ```
 
 ## Application Setup
