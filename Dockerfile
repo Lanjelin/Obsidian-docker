@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 LABEL maintainer="lanjelin"
 
 ENV TITLE=Obsidian-Docker
-ENV VERSION=1.10.6
+ENV VERSION=1.11.4
 
 # add local files
 COPY /root /
